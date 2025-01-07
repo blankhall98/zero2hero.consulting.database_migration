@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block title%}Index Page{%endblock%}
+
+
+{%block content%}
+
+<h1>Index Page</h1>
+<p class="lead">Arachnids Collection Database</p>
+
+<div class="container">
+    <ul>
+        <li><a href="{{url_for('create')}}">Create User</a></li>
+        <li><a href="{{url_for('read')}}">Read Users</a></li>
+    </ul>
+</div>
+
+{%endblock%}
