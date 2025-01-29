@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+
+{%block title%}Items{%endblock%}
+
+{%block content%}
+
+<div class="container">
+    <h1>Items</h1>
+
+    <div class="container">
+        <p>Filter</p>
+        <a class="btn btn-primary" href="{{url_for('items',method='all')}}">All</a>
+        <a class="btn btn-primary" href="{{url_for('items',method='price')}}">By Price</a>
+        <a class="btn btn-primary" href="{{url_for('items',method='stock')}}">By Stock</a>
+    </div>
+
+    {%if items%}
+    <div class="container">
+        <div class="row">
+            {% for item in items%}
+            <div class="col-md-3 m-2 p-2">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">Price: {{item.price}}</p>
+                        <p class="card-text">Stock: {{item.stock}}</p>
+                        <a href="{{url_for('delete_item',id=item.id)}}" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+    {%else%}
+
+    <div class="alert alert-warning" role="alert">
+        No items found.
+    </div>
+    {%endif%}
+    
+</div>
+
+{%endblock%}
