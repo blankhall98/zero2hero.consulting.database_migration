@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block title%}CI{%endblock%}
+{%block content%}
+
+<h2>Calculadora de Interés Compuesto</h2>
+
+<div class="container">
+    <form method="POST">
+        <div class="mb-3">
+          <label for="InitialInvestment" class="form-label">Initial Investment</label>
+          <input type="text" class="form-control" id="InitialInvestment" name="InitialInvestment">
+        </div>
+        <div class="mb-3">
+          <label for="RateOfReturn" class="form-label">Rate of Return</label>
+          <input type="text" class="form-control" id="RateOfReturn" name="RateOfReturn">
+        </div>
+        <div class="mb-3">
+            <label for="Time" class="form-label">Time</label>
+            <input type="text" class="form-control" id="Time" name="Time">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+{%endblock%}
